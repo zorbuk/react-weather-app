@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "serve": "live-server public",
-    "code": "babel src/app.js --out-file=public/js/index.js --presets=react,env --watch",
-    "dev": "npm run code | npm run serve"
+    "codetiempo": "babel src/app-tiempo.js --out-file=public/js/index-tiempo.js --presets=react,env --watch",
+    "codetiempocc": "babel src/app-tiempo-cc.js --out-file=public/js/index-tiempo-cc.js --presets=react,env --watch",
+    "devtiempo": "npm run codetiempo | npm run serve",
+    "devtiempocc": "npm run codetiempocc | npm run serve"
   },
   "author": "",
   "license": "ISC",
