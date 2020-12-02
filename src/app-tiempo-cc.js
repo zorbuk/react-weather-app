@@ -86,7 +86,7 @@ const render = (nombre) =>{
 }
 
 // --------------------------------------------------
-// -> INICIALIZADOR - ACTUALIZAR()
+// -> INICIALIZADOR - ACTUALIZAR() - GETCOUNTRYBYIP()
 // --------------------------------------------------
 actualizar()
 getCountryByIP()
