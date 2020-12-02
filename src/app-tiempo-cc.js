@@ -48,6 +48,25 @@ const actualizar = async (e) => {
     }
     render(cocod); 
 }
+// --------------------------------------------------
+// -> FUNCION QUE OBTIENE COUNTRY POR IP (nombre)
+// -> http://ipinfo.io/ : http://ipinfo.io/json
+// --------------------------------------------------
+const getCountryByIP = async (e) => {
+    const resultado1 = await axios.get('http://ipinfo.io/json?token=34a6ff414fa6d4')
+    const cCode = resultado1.data.country;
+
+    console.log('ipinfo:', cCode)
+
+    const resultado2 = await axios.get('https://restcountries.eu/rest/v2/all')
+    const countries = resultado2.data;
+    const country = countries.find((country)=> {
+        return country.alpha2Code.toLowerCase() === cCode.toLowerCase()
+    })
+
+    console.log(country.name)
+    //render(country.name)
+}
 
 // --------------------------------------------------
 // -> FUNCION RENDERIZAR (nombre)
@@ -70,3 +89,4 @@ const render = (nombre) =>{
 // -> INICIALIZADOR - ACTUALIZAR()
 // --------------------------------------------------
 actualizar()
+getCountryByIP()
